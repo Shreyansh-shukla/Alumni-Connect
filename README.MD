@@ -1,72 +1,62 @@
-Alumni Connect is a web application that provides three types of user roles: admin, alumni, and student. The admin role allows users to manage and create profiles for both alumni and students, and provides access to analytics related to alumni status. Additionally, the admin can upload alumni and student data in CSV format, and create posts about upcoming events in the college.
+# Shreyansh Shukla
 
-The alumni role enables alumni to update their higher education and employment status, and create posts on the platform for other alumni and students to view and comment on.
+**Software Engineer | Secure, scalable, and data-driven systems**  \
+Birmingham, United Kingdom · +44 7559 359779 · shreyaanshshukla@gmail.com · [LinkedIn](https://www.linkedin.com)
 
-The student role allows students to browse and comment on alumni posts, and search for alumni based on their interests.
+## Profile
+Software engineer with 3+ years of experience delivering secure, scalable, and data-driven web applications. Skilled in designing RESTful APIs, front-end architectures, and distributed back-end systems using Java, Spring Boot, Node.js, React, and TypeScript. Proficient in AWS, Docker, Kubernetes, Terraform, and CI/CD with strong observability (Prometheus, Grafana, OpenTelemetry). Solid grasp of microservices, Zero Trust security, Agile delivery, and TDD/BDD.
 
-Overall, Alumni Connect is designed to facilitate interaction and engagement between alumni and students, as well as provide valuable insights into alumni success.
+## Technical Skills
+- **Languages:** C++, JavaScript, TypeScript, Java, Python, SQL
+- **Frontend:** React.js, Next.js, Angular, Bootstrap, Tailwind CSS
+- **Backend:** Node.js, Express, Spring Boot, REST APIs, Keycloak/SSO, OAuth2, JWT
+- **Cloud & DevOps:** AWS (EC2, Lambda, RDS, CloudWatch), Docker, Kubernetes, Terraform, Jenkins, GitHub Actions, Linux/Unix
+- **Data & Analytics:** BigQuery, Looker, PostgreSQL, MySQL, MongoDB, Redis
+- **Infrastructure & Observability:** OpenTelemetry, Prometheus, Grafana, Sentry; blue/green & canary deployments
+- **Practices:** Agile/Scrum, TDD, BDD, Pair Programming, DDD, SOLID, DRY
+- **Security/Networking:** HTTP/HTTPS, VPN, TCP/IP, Proxy/Firewall, Zero Trust, QUIC, API Security, Secure Coding (OWASP)
 
-Here are some snapshots
+## Experience
+### System Engineer — Tata Consultancy Services (Pune, India)  
+**Aug 2022 – Aug 2025**
+- Designed and implemented secure RESTful APIs with Spring Boot, Node.js, and Angular, improving efficiency by 30%.
+- Led a 4-person team to deliver a Security Resource Management System (React + Node gateway) ahead of schedule via Agile sprints.
+- Built Jenkins & GitHub Actions pipelines, reducing deployment time by 40%; implemented comprehensive unit testing to cut bugs by 30%.
+- Optimized SQL and caching to reduce server load and improve throughput by 15%; added monitoring and alerts via CloudWatch & Prometheus.
+- Authored technical designs and deployment docs that cut onboarding time by 30%; conducted code reviews and pair programming.
+- Executed targeted NVD vulnerability scans, remediating three high-risk issues in production.
 
-<img width="650" alt="image" src="https://user-images.githubusercontent.com/118751863/219826577-737dec66-9a8c-43db-b0fc-1258c17b77dd.png"><img width="650" alt="image" src="https://user-images.githubusercontent.com/118751863/219826642-9c7c3695-a684-472f-9824-8fa4572e1720.png">
+### Data Analyst Intern — Animall (Gurugram, India)  
+**May 2022 – Jul 2022**
+- Analyzed campaign data in BigQuery and Looker, improving performance by 15% and informing deployment strategies.
+- Automated SQL and Looker API reports to save ~25 hours/month; optimized ETL jobs and dashboard queries for 20% faster responses.
+- Correlated product and marketing metrics to strengthen engagement tracking.
 
-<img width="650" alt="image" src="https://user-images.githubusercontent.com/118751863/219826681-ffc06865-46eb-47be-ae5a-9e85988d4823.png">
-<img width="650" alt="image" src="https://user-images.githubusercontent.com/118751863/219826700-ac183fed-2d47-4f5e-a33f-2d099e91ab9d.png">
-<img width="650" alt="image" src="https://user-images.githubusercontent.com/118751863/219826734-e73716ab-75ea-4fe3-a4d7-ed97cba7234c.png">
-<img width="650" alt="image" src="https://user-images.githubusercontent.com/118751863/219826815-e760e3b0-8931-4f1d-b06c-8957b42b1d1a.png">
+### Data Analyst Intern — Neon Digital Media (Gurugram, India)  
+**Feb 2022 – Apr 2022**
+- Built automated multi-channel ad reporting pipelines (Amazon, Facebook, TikTok) with Looker + Sheets, halving report delivery time.
+- Produced insights that boosted ROI by 25% for client accounts.
 
-  
+### Salesforce Developer Intern — Cloud Certitude (Gurugram, India)  
+**Mar 2021 – Jul 2021**
+- Developed Apex, SOQL, and LWC components to automate processes and improve UX by 20%; completed Salesforce Admin & Developer training (50K+ Trailhead points).
 
-To the run this repo , follow these steps
-###### Run migrations to migrate tables to database.
+### Frontend Developer Intern — London Sales & Consultancy Group (Remote)  
+**Jul 2020 – Sep 2020**
+- Rebuilt responsive UIs with React.js & Bootstrap, improving Lighthouse performance and accessibility scores.
 
-```Shell
-python manage.py makemigrations
-python manage.py migrate
-```
+## Projects
+### Real-Time Chatting System — Java, Spring Boot, React
+- Designed a WebSocket-enabled chat platform with user auth, message persistence, and RESTful APIs backed by MySQL.
+- Deployed on AWS EC2 with Docker and Kubernetes, with CI/CD via GitHub Actions; enforced Agile, TDD, and secure coding practices.
 
-###### To run python code.
+## Certifications & Achievements
+- Coursera: Python for Everybody, Data Structures, Data Science Math Skills, Build Your First React Website, AI Chatbot (no-code), Google Cloud Fundamentals
+- CodeKaze 2024: All-India Rank 73 / 60,000 participants
 
-```Shell
-python manage.py shell
-```
+## Education
+- **MSc, Advanced Computer Science** — University of Birmingham (Sep 2025 – Sep 2026)
+- **BTech, Computer Science** — Bharati Vidyapeeth College of Engineering (Jul 2018 – Jul 2022)
 
-###### To create groups for Admins and create one Admin.
-
-```Python
-from django.contrib.auth.models import User, Group, Permission
-from django.contrib.contenttypes.models import ContentType
-
-admins, _ = Group.objects.get_or_create(name='admins')
-admins_ct = ContentType.objects.get(app_label='auth', model='user')
-is_admin, _ = Permission.objects.get_or_create(name='is_admin', codename='is_admin', content_type=admins_ct)
-admins.permissions.add(is_admin)
-is_admin.save()
-admin,_ = User.objects.get_or_create(username='admin')
-admin.set_password('anteater')
-admin.groups.add(admins)
-admin.save()
-admin.has_perm('auth.is_admin')
-```
-
-###### To create groups for Alumni.
-
-```Python
-from django.contrib.auth.models import User, Group, Permission
-from django.contrib.contenttypes.models import ContentType
-alumni, _ = Group.objects.get_or_create(name='alumni')
-alumni_ct, _ = ContentType.objects.get_or_create(app_label='auth', model='user')
-is_alumnus, _ = Permission.objects.get_or_create(name='is_alumnus', codename='is_alumnus', content_type=alumni_ct)
-alumni.permissions.add(is_alumnus)
-```
-
-###### To create groups for Students.
-
-```Python
-from django.contrib.auth.models import User, Group, Permission
-from django.contrib.contenttypes.models import ContentType
-students, _ = Group.objects.get_or_create(name='students')
-students_ct, _ = ContentType.objects.get_or_create(app_label='auth', model='User')
-is_student, _ = Permission.objects.get_or_create(name='is_student', codename='is_student', content_type=students_ct)
-students.permissions.add(is_student)
-```
+## About this Repository
+This repository hosts a personal profile README generated from Shreyansh Shukla’s CV metadata. Feel free to reuse this structure for other profile README needs.
